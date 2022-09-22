@@ -2,34 +2,49 @@
 
 Toggle State on-off, because I got tired of re-making it for various little things.
 
-## Using
+## How To Use
+
+You can just clone the whole repository from here and run
+
+```
+npm install
+npm run dev
+```
+
+to see how it goes.
 
 I'll fill this out later. this example is good enough for now.
 Besides, I'm the only one using it right now :D
 
-## How To Use
-
 ```
-<!-- Import the button -->
 <script setup>
-import ToggleButton from './components/ToggleActionButton.vue';
+// Import the button
+import { reactive } from 'vue';
+import ToggleButton from './components/ToggleButton.vue';
 
+const reacts = reactive({
+  clicked: 'Not Clicked',
+});
 
 // Declare functions to toggle between
-function playAudio() {
-  console.log(`SUCCESS playAudio`);
+function start() {
+  reacts.clicked = 'Start Clicked!';
 }
-function stopAudio() {
-  console.log(`SUCCESS stopAudio`);
+function stop() {
+  reacts.clicked = 'Stop Clicked!';
 }
+
 </script>
 
+<!-- This is how you use the component in your app's template -->
 <template>
-<!-- For now, only two events are allowed -->
+  <div>{{ reacts.clicked }}</div>
   <ToggleButton
     @doAction="this[$event]()"
-    :labels="['Play', 'Stop']"
-    :actions="['playAudio', 'stopAudio']"
+    styles="large"
+    :labels="['Start', 'Stop']"
+    :actions="['start', 'stop']"
+    :colour="['green', 'red']"
   />
 </template>
 

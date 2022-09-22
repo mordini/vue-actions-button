@@ -13,8 +13,6 @@ function start() {
 function stop() {
   reacts.clicked = 'Stop Clicked!';
 }
-
-// make it so button can be red or green depending on stop/start
 </script>
 
 <!-- This is how you use the component in your app's template -->
