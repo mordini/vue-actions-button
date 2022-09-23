@@ -1,5 +1,5 @@
 {
-  "name": "vue-toggle-button",
+  "name": "@mordini/vue-toggle-button",
   "private": false,
   "version": "1.0.0",
   "description": "Vue 3 Toggle Button",
