@@ -1,7 +1,7 @@
 {
   "name": "@mordini/vue-toggle-button",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue 3 Toggle Button",
   "main": "./src/npm.entry.js",
   "type": "module",
