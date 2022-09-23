@@ -20,7 +20,11 @@ Besides, I'm the only one using it right now :D
 <script setup>
 // Import the button
 import { reactive } from 'vue';
-import ToggleButton from './components/ToggleButton.vue';
+
+// for the local testing, after installing from the npm registry you want to use @mordini
+// import ToggleButton from './components/ToggleButton.vue';
+
+import ToggleButton from '@mordini/vue-toggle-button';
 
 const reacts = reactive({
   clicked: 'Not Clicked',
