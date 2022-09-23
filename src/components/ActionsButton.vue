@@ -27,6 +27,12 @@ const props = defineProps({
   styles: String,
 });
 
+// Set initital action states
+let actionState = false;
+
+// Bool for multiple actions
+let toggleActions = props.actions > 1;
+
 // Define emits
 const emit = defineEmits(['doAction']);
 
@@ -37,23 +43,36 @@ const reacts = reactive({
   colour: props.colour[0],
 });
 
-// Set initital action states
-let actionState = false;
+// Run one action, or toggle between two
+function runActionByType() {
+  toggleActions ? toggleActionState() : runAction();
+}
+
+// Run the single action, send to parent
+function runAction() {
+  console.log(`running single action: ${props.action[0]}`);
+  reacts.action = props.action[0];
+  emit('doAction', reacts.action);
+}
+
+// Run the toggle actions
 
 // Change label and action, send action to parent
 function toggleActionState() {
+  console.log(`running toggle action: ${reacts.action}`);
+
   // Send action to parent
   emit('doAction', reacts.action);
 
   // Actions between action states for next click
-  if (!actionState) {
-    reacts.currentLabel = props.labels[1];
-    reacts.action = props.actions[1];
-    reacts.colour = props.colour[1];
-  } else {
+  if (actionState) {
     reacts.currentLabel = props.labels[0];
     reacts.action = props.actions[0];
     reacts.colour = props.colour[0];
+  } else {
+    reacts.currentLabel = props.labels[1];
+    reacts.action = props.actions[1];
+    reacts.colour = props.colour[1];
   }
 
   // Change state to opposite of previous
