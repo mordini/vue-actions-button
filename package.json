@@ -5,6 +5,11 @@
   "description": "Vue 3 Toggle Button",
   "main": "./src/npm.entry.js",
   "type": "module",
+  "homepage": "https://github.com/mordini/vue-toggle-button",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mordini/vue-toggle-button"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
