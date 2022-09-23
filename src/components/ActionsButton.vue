@@ -12,7 +12,7 @@
   </div>
 </template>
 <script setup>
-console.log(`Loading ToggleButton component`);
+console.log(`Loading ActionsButton component`);
 import { reactive } from 'vue';
 import '../assets/css/buttons/plastic.css';
 import '../assets/css/buttons/cool.css';
@@ -45,7 +45,7 @@ function toggleActionState() {
   // Send action to parent
   emit('doAction', reacts.action);
 
-  // Toggle between action states for next click
+  // Actions between action states for next click
   if (!actionState) {
     reacts.currentLabel = props.labels[1];
     reacts.action = props.actions[1];

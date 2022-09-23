@@ -1,8 +1,8 @@
 {
-  "name": "@mordini/vue-toggle-button",
+  "name": "vue-actions-button",
   "private": false,
-  "version": "1.0.1",
-  "description": "Vue 3 Toggle Button",
+  "version": "1.0.0",
+  "description": "Vue 3 Actions Button",
   "main": "./src/npm.entry.js",
   "type": "module",
   "homepage": "https://github.com/mordini/vue-toggle-button",

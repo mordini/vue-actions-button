@@ -1,6 +1,6 @@
-# Vue 3 Toggle Button
+# Vue 3 Actions Button
 
-Toggle State on-off, because I got tired of re-making it for various little things.
+Actions State on-off, because I got tired of re-making it for various little things.
 
 ## How To Use
 
@@ -22,9 +22,9 @@ Besides, I'm the only one using it right now :D
 import { reactive } from 'vue';
 
 // for the local testing, after installing from the npm registry you want to use @mordini
-// import ToggleButton from './components/ToggleButton.vue';
+// import ActionsButton from './components/ActionsButton.vue';
 
-import ToggleButton from '@mordini/vue-toggle-button';
+import ActionsButton from 'vue-actions-button';
 
 const reacts = reactive({
   clicked: 'Not Clicked',
@@ -43,7 +43,7 @@ function stop() {
 <!-- This is how you use the component in your app's template -->
 <template>
   <div>{{ reacts.clicked }}</div>
-  <ToggleButton
+  <ActionsButton
     @doAction="this[$event]()"
     styles="large"
     :labels="['Start', 'Stop']"

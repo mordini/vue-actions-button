@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue';
-import ToggleButton from './components/ToggleButton.vue';
+import ActionsButton from './components/ActionsButton.vue';
 
 const reacts = reactive({
   clicked: 'Not Clicked',
@@ -18,7 +18,7 @@ function stop() {
 <!-- This is how you use the component in your app's template -->
 <template>
   <div>{{ reacts.clicked }}</div>
-  <ToggleButton
+  <ActionsButton
     @doAction="this[$event]()"
     styles="large"
     :labels="['Start', 'Stop']"
