@@ -9,6 +9,7 @@
     >
       {{ reacts.currentLabel }}
     </button>
+    <p>{{ reacts.action }}</p>
   </div>
 </template>
 <script setup>
@@ -30,10 +31,6 @@ const props = defineProps({
 // Set initital action states
 let actionState = false;
 
-// Bool for multiple actions
-let toggleActions = props.actions > 1;
-console.log(`toggle actions is: ${toggleActions}`);
-
 // Define emits
 const emit = defineEmits(['doAction']);
 
@@ -46,6 +43,12 @@ const reacts = reactive({
 
 // Run one action, or toggle between two
 function runActionByType() {
+  // Bool for multiple actions
+  console.log(props.actions);
+  let toggleActions = props.actions.length > 1;
+
+  console.log(`toggle actions is: ${toggleActions}`);
+
   toggleActions ? runToggleAction() : runSingleAction();
   console.log(`toggle actions is: ${toggleActions}`);
 }
