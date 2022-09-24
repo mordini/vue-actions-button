@@ -3,7 +3,7 @@
   <div class="centered">
     <button
       style="outline: none"
-      @click="toggleActionState()"
+      @click="runActionByType()"
       class="button"
       :class="[props.styles, reacts.colour]"
     >
@@ -32,6 +32,7 @@ let actionState = false;
 
 // Bool for multiple actions
 let toggleActions = props.actions > 1;
+console.log(`toggle actions is: ${toggleActions}`);
 
 // Define emits
 const emit = defineEmits(['doAction']);
@@ -45,20 +46,21 @@ const reacts = reactive({
 
 // Run one action, or toggle between two
 function runActionByType() {
-  toggleActions ? toggleActionState() : runAction();
+  toggleActions ? runToggleAction() : runSingleAction();
+  console.log(`toggle actions is: ${toggleActions}`);
 }
 
 // Run the single action, send to parent
-function runAction() {
-  console.log(`running single action: ${props.action[0]}`);
-  reacts.action = props.action[0];
+function runSingleAction() {
+  console.log(`running single action: ${props.actions[0]}`);
+  reacts.action = props.actions[0];
   emit('doAction', reacts.action);
 }
 
 // Run the toggle actions
 
 // Change label and action, send action to parent
-function toggleActionState() {
+function runToggleAction() {
   console.log(`running toggle action: ${reacts.action}`);
 
   // Send action to parent
