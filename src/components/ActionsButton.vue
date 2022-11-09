@@ -1,6 +1,6 @@
 <!-- "I can do all things through him who strengthens me." -Philippians 4:13 -->
 <template>
-  <div class="centered">
+  <div class="">
     <button
       style="outline: none"
       @click="runActionByType()"
