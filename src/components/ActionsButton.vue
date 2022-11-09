@@ -9,7 +9,7 @@
     >
       {{ reacts.currentLabel }}
     </button>
-    <p>{{ reacts.action }}</p>
+    <!-- <p>{{ reacts.action }}</p> -->
   </div>
 </template>
 <script setup>
